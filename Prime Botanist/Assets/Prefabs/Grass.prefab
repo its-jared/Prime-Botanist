@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantName: Grass
+  plantIcon: {fileID: 21300000, guid: f93503818efe16843af4e6cc9379ba92, type: 3}
   plantPrefab: {fileID: 1800024602312658452}
   design: {fileID: 9115673786339902148}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
+  plantHealth: 20
   canGoInWater: 0
   canGoOnLand: 1
   spread: 1

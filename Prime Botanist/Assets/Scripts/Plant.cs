@@ -3,6 +3,7 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     public string plantName;
+    public Sprite plantIcon;
     public GameObject plantPrefab;
     public Transform design;
     public Color meshColor = Color.green;

@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantName: Demo Plant
+  plantIcon: {fileID: 21300000, guid: 658dc623ae6a1c04b8c4c9a6e9cef2b9, type: 3}
   plantPrefab: {fileID: 1800024602312658452}
   design: {fileID: 6958396378443416572}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
+  plantHealth: 20
   canGoInWater: 1
   canGoOnLand: 0
   spread: 0
