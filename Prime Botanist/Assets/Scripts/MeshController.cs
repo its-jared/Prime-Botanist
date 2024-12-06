@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshCollider))]
-public class HeightGen : MonoBehaviour
+public class MeshController : MonoBehaviour
 {
     public Material meshMaterial;
     public int width, length;

@@ -6,7 +6,7 @@ public class SeedPanel : MonoBehaviour
     public Plant[] plants;
     public GameObject buttonPrefab;
     public Transform contentTransform;
-    public PlaceSeed placeSeed;
+    public Interactor placeSeed;
     public Image activePlant;
 
     void Awake()

@@ -6,7 +6,7 @@ public class SeedButton : MonoBehaviour
 {
     public TextMeshProUGUI label;
     public Image sprite;
-    public PlaceSeed placeSeed;
+    public Interactor placeSeed;
     public Image activePlant;
 
     [Header("Info")]
@@ -22,7 +22,7 @@ public class SeedButton : MonoBehaviour
 
     public void Click()
     {
-        placeSeed.seed = plant.plantPrefab;
+        placeSeed.ChangeSeed(plant.plantPrefab);
         activePlant.sprite = spriteImage;
     }
 }

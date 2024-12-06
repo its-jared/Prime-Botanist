@@ -11,12 +11,12 @@ public class World : MonoBehaviour
     public Queue<GameObject> plantsToKill = new Queue<GameObject>();
 
     private Dictionary<Vector2, Transform> plants = new Dictionary<Vector2, Transform>();
-    private HeightGen heightGen;
+    private MeshController meshCon;
 
     void Start()
     {
         instance = this;
-        heightGen = GetComponent<HeightGen>();
+        meshCon = GetComponent<MeshController>();
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class World : MonoBehaviour
     {
         // Attempting to spawn plant outside of the world.
         if (pos.x <= 0 || pos.y <= 0 ||
-            pos.x >= heightGen.width || pos.y >= heightGen.length)
+            pos.x >= meshCon.width || pos.y >= meshCon.length)
         {
             Destroy(t.gameObject);
             return;
@@ -39,7 +39,7 @@ public class World : MonoBehaviour
         // Check if the plant is allowed to be in water.
         if (!t.gameObject.GetComponent<Plant>().canGoInWater)
         {
-            if (heightGen.tiles[(int)pos.x, (int)pos.y] == 1)
+            if (meshCon.tiles[(int)pos.x, (int)pos.y] == 1)
             {
                 Destroy(t.gameObject);
                 return;
@@ -49,7 +49,7 @@ public class World : MonoBehaviour
         // Check if the plant is allowed to be on land.
         if (!t.gameObject.GetComponent<Plant>().canGoOnLand)
         {
-            if (heightGen.tiles[(int)pos.x, (int)pos.y] == 0)
+            if (meshCon.tiles[(int)pos.x, (int)pos.y] == 0)
             {
                 Destroy(t.gameObject);
                 return;
