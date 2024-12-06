@@ -28,6 +28,6 @@ public class ZoomController : MonoBehaviour
 
         // Clamp the zoom.
         // Prevents the player from going too far or through the world.
-        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, 1, 10);
+        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, 1, 15);
     }
 }

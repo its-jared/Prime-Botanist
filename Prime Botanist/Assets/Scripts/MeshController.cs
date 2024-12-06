@@ -136,7 +136,7 @@ public class MeshController : MonoBehaviour
 
         float x = width / 2;
         float z = width / 2;
-        Vector3 waterPos = new Vector3(x, 0f, z);
+        Vector3 waterPos = new Vector3(x + 0.5f, 0f, z + 0.5f);
 
         water.localScale = waterScale;
         water.position = waterPos;

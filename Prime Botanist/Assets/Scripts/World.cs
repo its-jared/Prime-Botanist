@@ -10,6 +10,9 @@ public class World : MonoBehaviour
 
     public Queue<GameObject> plantsToKill = new Queue<GameObject>();
 
+    public Transform cameraBody;
+    public Camera cameraItself;
+
     private Dictionary<Vector2, Transform> plants = new Dictionary<Vector2, Transform>();
     private MeshController meshCon;
 
@@ -17,6 +20,10 @@ public class World : MonoBehaviour
     {
         instance = this;
         meshCon = GetComponent<MeshController>();
+
+        // Set camera pos and what not to match world size.
+        cameraBody.position = new Vector3(meshCon.width - 5f, 0f, meshCon.length - 5f);
+        cameraItself.orthographicSize = meshCon.width - 5f;
     }
 
     void Update()

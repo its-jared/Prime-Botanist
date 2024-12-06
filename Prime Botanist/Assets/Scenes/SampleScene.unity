@@ -732,11 +732,12 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1506738807}
+  - {fileID: 346371997}
   m_Father: {fileID: 2113175527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -822,6 +823,168 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   zoomFactor: 0.5
+--- !u!1 &346371996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346371997}
+  - component: {fileID: 346371999}
+  - component: {fileID: 346371998}
+  m_Layer: 0
+  m_Name: Mouse Click Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &346371997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346371996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346371998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346371996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c715d99fdf52d9241bd7e1ce07002ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseClick: {fileID: 8300000, guid: 556f66f0c5522164ea55f27f217e3fad, type: 3}
+  ads: {fileID: 0}
+  leftMouseButton:
+    m_Name: Left Mouse Button
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a35bfddf-9cc0-4eeb-91eb-ffdd63d9758a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  rightMouseButton:
+    m_Name: Right Mouse Button
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2996dfb4-72da-4349-9c8c-6483060d71e6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!82 &346371999
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346371996}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,8 +1846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshMaterial: {fileID: 2100000, guid: 17fe1821f7039ed47895457f446d2549, type: 2}
-  width: 10
-  length: 10
+  width: 15
+  length: 15
   flat: 0
   groundColors:
   - {r: 0.1792453, g: 0.17490186, b: 0.14627092, a: 1}
@@ -1782,6 +1945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantSpreading: 1
+  cameraBody: {fileID: 2113175527}
+  cameraItself: {fileID: 330585545}
 --- !u!1 &935524720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2150,8 @@ MonoBehaviour:
   plants:
   - {fileID: 7021687856019686409, guid: 91bf6788805372a48b4133fb5b3e26c1, type: 3}
   - {fileID: 7021687856019686409, guid: 017015b8dac678d4c90d53847eb5a925, type: 3}
+  - {fileID: 2554432562977958150, guid: d232709e9893e2542a801ad4cbfef297, type: 3}
+  - {fileID: 3765874546055351228, guid: c844a1513efb27d4981ac9ff73c1acac, type: 3}
   buttonPrefab: {fileID: 2328022714701105944, guid: 716c2f17753ed9449a95fb2fa85dd811, type: 3}
   contentTransform: {fileID: 42862702}
   placeSeed: {fileID: 2113175529}
@@ -2413,6 +2580,8 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: 85c7d23165971f045a254d7971be458b, type: 3}
   - {fileID: 8300000, guid: daeb85a804087f343ba25b546e72c258, type: 3}
+  - {fileID: 8300000, guid: 7c6292e192f216a4ca8963fc5f958f28, type: 3}
+  - {fileID: 8300000, guid: b551f0e05eea7654badaa50fc50b19a8, type: 3}
 --- !u!82 &1506738809
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3485,7 +3654,7 @@ Transform:
   m_GameObject: {fileID: 2113175526}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 5, y: 0, z: 5}
+  m_LocalPosition: {x: 20, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

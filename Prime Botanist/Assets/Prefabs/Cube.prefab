@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2349806080053622100}
   - component: {fileID: 7021687856019686409}
   m_Layer: 3
-  m_Name: Seed
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,14 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5dd80fa7a0064458625c98ded44c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantName: Demo Plant
-  plantIcon: {fileID: 21300000, guid: 658dc623ae6a1c04b8c4c9a6e9cef2b9, type: 3}
+  plantName: Cube
+  plantIcon: {fileID: 21300000, guid: bcbec8942cea39843a6e6b4948529e70, type: 3}
   plantPrefab: {fileID: 1800024602312658452}
   design: {fileID: 6958396378443416572}
-  meshColor: {r: 0, g: 1, b: 0, a: 1}
+  meshColor: {r: 1, g: 0.017049663, b: 0, a: 0}
   plantHealth: 20
   canGoInWater: 1
-  canGoOnLand: 0
+  canGoOnLand: 1
   spread: 0
   allowedIterations: 3
   spreadDistance: 1

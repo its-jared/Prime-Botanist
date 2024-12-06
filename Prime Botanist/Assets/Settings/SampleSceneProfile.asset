@@ -46,7 +46,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 0
-    m_Value: 5.43
+    m_Value: 18.13
 --- !u!114 &-3357603926938260329
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -169,7 +169,7 @@ MonoBehaviour:
     m_Value: 32
   focalLength:
     m_OverrideState: 1
-    m_Value: 300
+    m_Value: 1
   bladeCount:
     m_OverrideState: 1
     m_Value: 9
@@ -200,7 +200,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.029
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
