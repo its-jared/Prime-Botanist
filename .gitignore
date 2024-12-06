@@ -71,3 +71,6 @@ sysinfo.txt
 # Temporary auto-generated Android Assets
 /Prime Botanist/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /Prime Botanist/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Songs since they are too large for Github
+/Prime Botanist/Assets/Sound/Songs/*
