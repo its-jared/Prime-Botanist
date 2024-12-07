@@ -45,9 +45,6 @@ public class Interactor : MonoBehaviour
             // If so, check if we're planting plants or watering them.
             if (placeAction.WasCompletedThisFrame() && activeToolType == ToolType.Planter)
                 Place(highlight.position);
-            // Water the selected plant.
-            else if (placeAction.WasCompletedThisFrame() && activeToolType == ToolType.WaterBucket)
-                WaterPlant(highlight.position);
             // Check if the right mouse button was clicked.
             else if (breakAction.WasCompletedThisFrame())
                 Break(highlight.position);
@@ -75,10 +72,5 @@ public class Interactor : MonoBehaviour
     private void Break(Vector3 pos)
     {
         World.instance.BreakPlant(pos);
-    }
-
-    private void WaterPlant(Vector3 pos)
-    {
-
     }
 }

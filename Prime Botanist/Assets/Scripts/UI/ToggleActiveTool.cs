@@ -4,10 +4,9 @@ using UnityEngine.UI;
 
 public class ToggleActiveTool : MonoBehaviour
 {
-    public Toggle planterToggle;
-    public Toggle wateringCanToggle;
     public Interactor interactor;
     public TextMeshProUGUI activeToolLabel;
+    public Image activePlant;
 
     void Start()
     {
@@ -19,14 +18,17 @@ public class ToggleActiveTool : MonoBehaviour
         switch (toolType)
         {
             case ToolType.Planter:
-                planterToggle.isOn = true;
-                wateringCanToggle.isOn = false;
                 activeToolLabel.text = plant.plantName;
+                activePlant.sprite = plant.plantIcon;
+                interactor.activeToolType = ToolType.Planter;
                 break;
             case ToolType.WaterBucket:
-                planterToggle.isOn = false;
-                wateringCanToggle.isOn = true;
                 activeToolLabel.text = "Watering Can";
+                interactor.activeToolType = ToolType.WaterBucket;
+                break;
+            case ToolType.Dropper:
+                activeToolLabel.text = "Dropper";
+                interactor.activeToolType = ToolType.Dropper;
                 break;
         }
     }

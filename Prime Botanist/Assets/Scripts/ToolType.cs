@@ -3,5 +3,6 @@
 public enum ToolType
 {
     Planter,
-    WaterBucket
+    WaterBucket,
+    Dropper
 }

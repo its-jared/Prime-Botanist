@@ -12,6 +12,7 @@ public class World : MonoBehaviour
 
     public Transform cameraBody;
     public Camera cameraItself;
+    public Interactor interactor;
 
     private Dictionary<Vector2, Transform> plants = new Dictionary<Vector2, Transform>();
     private MeshController meshCon;

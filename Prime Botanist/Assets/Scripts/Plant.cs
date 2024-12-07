@@ -58,7 +58,7 @@ public class Plant : MonoBehaviour
 
         iteration -= spreadSpeed * Time.deltaTime;
 
-        if (iteration <= 0)
+        if (iteration <= 0 && !(plantHealth < 20))
         {
             iteration = spreadTime;
             allowedIterations--;
@@ -95,7 +95,15 @@ public class Plant : MonoBehaviour
 
     public void Clicked()
     {
-        TakeDamage(20);
+        switch (World.instance.interactor.activeToolType)
+        {
+            case ToolType.WaterBucket:
+                Heal(1);
+                break;
+            case ToolType.Dropper:
+                World.instance.interactor.ChangeSeed(gameObject);
+                break;
+        }
     }
 
     public void TakeDamage(int amount)
@@ -103,10 +111,15 @@ public class Plant : MonoBehaviour
         plantHealth -= amount;
 
         if (plantHealth <= 0)
-        {
             die();
-            return;
-        }
+    }
+
+    public void Heal(int amount)
+    {
+        plantHealth += amount;
+
+        if (plantHealth >= 20)
+            plantHealth = 20;
     }
 
     private void die()
