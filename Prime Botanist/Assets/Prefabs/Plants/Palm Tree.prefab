@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 688353682497766751}
+  - {fileID: 9155474966820650433}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3765874546055351228
@@ -50,6 +51,7 @@ MonoBehaviour:
   plantPrefab: {fileID: 4590996368562713236}
   design: {fileID: 688353682497766751}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
+  healthBar: {fileID: 0}
   plantHealth: 20
   canGoInWater: 0
   canGoOnLand: 1
@@ -58,6 +60,7 @@ MonoBehaviour:
   spreadDistance: 0
   spreadSpeed: 0
   spreadTime: 0
+  randomTimeOffset: 0
   randomYAxisRotation: 1
   randomHeightVariation: 0
   randomOffset: 1
@@ -134,4 +137,66 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 481554, guid: c6b7fb383a3534b039692b5485b6e739, type: 3}
   m_PrefabInstance: {fileID: 688353682497723469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7096029232863509951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4511813504164942778}
+    m_Modifications:
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998855161946675767, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: m_Name
+      value: Plant Spawn Particle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+--- !u!4 &9155474966820650433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+  m_PrefabInstance: {fileID: 7096029232863509951}
   m_PrefabAsset: {fileID: 0}
