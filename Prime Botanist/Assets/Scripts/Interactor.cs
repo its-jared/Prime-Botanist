@@ -7,7 +7,6 @@ public class Interactor : MonoBehaviour
 {
     public GameObject seed;
     public GameObject terrain;
-    public GameObject camera;
     public Transform highlight;
 
     public LayerMask terrainLayer;
@@ -15,6 +14,8 @@ public class Interactor : MonoBehaviour
 
     public ToolType activeToolType;
     public ToggleActiveTool tat;
+
+    public bool freeze;
 
     private InputAction placeAction;
     private InputAction breakAction;
@@ -30,6 +31,8 @@ public class Interactor : MonoBehaviour
 
     void Update()
     {
+        if (freeze) return;
+
         RaycastHit hit;
         Vector3 mousePos = Input.mousePosition;
         Ray terrainRay = Camera.main.ScreenPointToRay(mousePos);
@@ -59,6 +62,11 @@ public class Interactor : MonoBehaviour
     {
         seed = newSeed;
         tat.ToggleTool(activeToolType, seed.GetComponent<Plant>());
+    }
+
+    public void FreezeInteraction(bool f)
+    {
+        freeze = f;
     }
 
     private void Place(Vector3 pos)

@@ -7,6 +7,7 @@ public class Plant : MonoBehaviour
     public GameObject plantPrefab;
     public Transform design;
     public Color meshColor = Color.green;
+    public GameObject healthBar;
 
     [Header("Plant Health")]
     public int plantHealth = 20; // 0 - 20; where 0 is dead and 20 is healthy
@@ -21,6 +22,7 @@ public class Plant : MonoBehaviour
     public int spreadDistance; 
     public float spreadSpeed;
     public float spreadTime;
+    public float randomTimeOffset;
 
     [Header("Variations")]
     public bool randomYAxisRotation;
@@ -28,6 +30,7 @@ public class Plant : MonoBehaviour
     public bool randomOffset;
 
     private float iteration;
+    private float randomSpreadOffset;
     private Vector3 pos;
 
     void Awake()
@@ -46,6 +49,8 @@ public class Plant : MonoBehaviour
         design.position = new Vector3(transform.position.x - design.position.x,
                                       design.position.y,
                                       transform.position.z - design.position.z);
+
+        randomSpreadOffset = Random.Range(-randomTimeOffset, randomTimeOffset);
     }
 
     void FixedUpdate()
@@ -56,7 +61,7 @@ public class Plant : MonoBehaviour
         // Stop when no more interations avalible.
         if (allowedIterations <= 0) return;
 
-        iteration -= spreadSpeed * Time.deltaTime;
+        iteration -= (spreadSpeed + randomSpreadOffset) * Time.deltaTime;
 
         if (iteration <= 0 && !(plantHealth < 20))
         {
@@ -95,6 +100,11 @@ public class Plant : MonoBehaviour
 
     public void Clicked()
     {
+        Debug.Log($"You clicked me ({plantName}).");
+
+        healthBar.SetActive(true);
+        healthBar.transform.position = transform.position;
+
         switch (World.instance.interactor.activeToolType)
         {
             case ToolType.WaterBucket:

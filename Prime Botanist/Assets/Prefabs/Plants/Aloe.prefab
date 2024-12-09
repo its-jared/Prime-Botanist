@@ -50,6 +50,7 @@ MonoBehaviour:
   plantPrefab: {fileID: 7704456751072337085}
   design: {fileID: 5334300815541605788}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
+  healthBar: {fileID: 0}
   plantHealth: 20
   canGoInWater: 0
   canGoOnLand: 1
@@ -58,6 +59,7 @@ MonoBehaviour:
   spreadDistance: 2
   spreadSpeed: 0.1
   spreadTime: 5
+  randomTimeOffset: 0.02
   randomYAxisRotation: 1
   randomHeightVariation: 0
   randomOffset: 0

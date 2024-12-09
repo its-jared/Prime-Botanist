@@ -150,6 +150,7 @@ MonoBehaviour:
   label: {fileID: 1384511539923537721}
   sprite: {fileID: 5815392517773815391}
   placeSeed: {fileID: 0}
+  activePlant: {fileID: 0}
   labelText: 
   spriteImage: {fileID: 0}
   plant: {fileID: 0}
