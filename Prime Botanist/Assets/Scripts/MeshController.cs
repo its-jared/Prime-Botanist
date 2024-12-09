@@ -7,8 +7,8 @@ public class MeshController : MonoBehaviour
 {
     public Material meshMaterial;
     public int width, length;
-    public bool flat;
-    public Color[] groundColors;
+    public int worldType;
+    public WorldType[] worldTypes;
 
     public int seed;
 
@@ -28,9 +28,14 @@ public class MeshController : MonoBehaviour
 
     private float[,] noise;
 
+    private WorldType type;
+
 
     void Awake()
     {
+        // Set the world type
+        type = worldTypes[worldType];
+
         // Set the camera's rotation target to be in the center of the world. 
         cameraRotationTarget.position = new Vector3(width / 2, 0, length / 2);
 
@@ -56,7 +61,7 @@ public class MeshController : MonoBehaviour
 
         // Set the size and scale of the water quad.
         // We don't want water if the world is flat.
-        if (!flat) generateWater();
+        if (!type.flat) generateWater();
     }
 
     void FixedUpdate()
@@ -83,7 +88,7 @@ public class MeshController : MonoBehaviour
             for (int x = 0; x <= length; x++)
             {
                 float n = 0f;
-                if (!flat) n = Mathf.PerlinNoise((x + seed) * 0.15f, (z + seed) * 0.15f) * 2f;
+                if (!type.flat) n = Mathf.PerlinNoise((x + seed) * type.noiseZoom, (z + seed) * type.noiseZoom) * type.noiseScale;
 
                 if (n <= waterLevel) tiles[x, z] = 1;
                 else tiles[x, z] = 0;
@@ -91,9 +96,9 @@ public class MeshController : MonoBehaviour
                 noise[x, z] = n;
                 verts[i] = new Vector3(x, n, z);
                 uvs[i] = new Vector3(x, z);
-                colors[i] = new Color(Mathf.Lerp(groundColors[0].r, groundColors[1].r, n),
-                                      Mathf.Lerp(groundColors[0].g, groundColors[1].g, n),
-                                      Mathf.Lerp(groundColors[0].b, groundColors[1].b, n));
+                colors[i] = new Color(Mathf.Lerp(type.deepGroundColor.r, type.shallowGroundColor.r, n),
+                                      Mathf.Lerp(type.deepGroundColor.g, type.shallowGroundColor.g, n),
+                                      Mathf.Lerp(type.deepGroundColor.b, type.shallowGroundColor.b, n));
                 i++;
             }
         }

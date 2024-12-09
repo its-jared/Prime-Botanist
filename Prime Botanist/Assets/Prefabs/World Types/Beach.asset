@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b44455f21da6284ba5b40bc78515afb, type: 3}
+  m_Name: Beach
+  m_EditorClassIdentifier: 
+  presetName: Beach
+  deepGroundColor: {r: 0.754717, g: 0.74342674, b: 0.6229975, a: 1}
+  shallowGroundColor: {r: 1, g: 0.98823535, b: 0.86274517, a: 1}
+  flat: 0
+  waterLevel: 0.6
+  noiseZoom: 0.15
+  noiseScale: 2

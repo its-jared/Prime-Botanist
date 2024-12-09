@@ -2465,10 +2465,11 @@ MonoBehaviour:
   meshMaterial: {fileID: 2100000, guid: 17fe1821f7039ed47895457f446d2549, type: 2}
   width: 15
   length: 15
-  flat: 0
-  groundColors:
-  - {r: 0.9994769, g: 1, b: 0.9292453, a: 1}
-  - {r: 0.8301887, g: 0.8301887, b: 0.71662515, a: 1}
+  worldType: 1
+  worldTypes:
+  - {fileID: 11400000, guid: 0464c80f20ebde949a45401aadc40da0, type: 2}
+  - {fileID: 11400000, guid: 157577eecefb53a4b87ab3cb40ef1b3f, type: 2}
+  - {fileID: 11400000, guid: 4ebbd86dc1fac0b4e84f2948208b7298, type: 2}
   seed: 0
   water: {fileID: 630847731}
   waterLevel: 0.6
@@ -2981,6 +2982,8 @@ MonoBehaviour:
   - {fileID: 7021687856019686409, guid: 017015b8dac678d4c90d53847eb5a925, type: 3}
   - {fileID: 2554432562977958150, guid: d232709e9893e2542a801ad4cbfef297, type: 3}
   - {fileID: 3765874546055351228, guid: c844a1513efb27d4981ac9ff73c1acac, type: 3}
+  - {fileID: 3765874546055351228, guid: 38a60f66404b85f4a9380568356de12d, type: 3}
+  - {fileID: 3765874546055351228, guid: 8a2252243769e2e4aa30e893ee92e42f, type: 3}
   buttonPrefab: {fileID: 2328022714701105944, guid: 716c2f17753ed9449a95fb2fa85dd811, type: 3}
   contentTransform: {fileID: 42862702}
   placeSeed: {fileID: 2113175529}
