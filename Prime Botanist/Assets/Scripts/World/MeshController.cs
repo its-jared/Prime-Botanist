@@ -6,7 +6,7 @@ using UnityEngine;
 public class MeshController : MonoBehaviour
 {
     public Material meshMaterial;
-    public int width, length;
+    public int width, length, height;
     public int worldType;
     public WorldType[] worldTypes;
 
@@ -27,6 +27,7 @@ public class MeshController : MonoBehaviour
     private MeshRenderer meshRenderer;
 
     private float[,] noise;
+    private byte[,,] voxels;
 
     private WorldType type;
 

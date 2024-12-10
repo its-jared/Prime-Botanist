@@ -8,6 +8,10 @@ public class ToggleActiveTool : MonoBehaviour
     public TextMeshProUGUI activeToolLabel;
     public Image activePlant;
 
+    public Button planterButton;
+    public Button WaterBucketButton;
+    public Button DropperButton;
+
     void Start()
     {
         ToggleTool(interactor.activeToolType, interactor.seed.GetComponent<Plant>());
@@ -21,14 +25,26 @@ public class ToggleActiveTool : MonoBehaviour
                 activeToolLabel.text = plant.plantName;
                 activePlant.sprite = plant.plantIcon;
                 interactor.activeToolType = ToolType.Planter;
+
+                planterButton.interactable = false;
+                WaterBucketButton.interactable = true;
+                DropperButton.interactable = true;
                 break;
             case ToolType.WaterBucket:
                 activeToolLabel.text = "Watering Can";
                 interactor.activeToolType = ToolType.WaterBucket;
+
+                planterButton.interactable = true;
+                WaterBucketButton.interactable = false;
+                DropperButton.interactable = true;
                 break;
             case ToolType.Dropper:
                 activeToolLabel.text = "Dropper";
                 interactor.activeToolType = ToolType.Dropper;
+
+                planterButton.interactable = true;
+                WaterBucketButton.interactable = true;
+                DropperButton.interactable = false;
                 break;
         }
     }

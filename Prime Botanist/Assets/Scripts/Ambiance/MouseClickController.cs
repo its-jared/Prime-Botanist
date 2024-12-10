@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
-public class MouseClickController : MonoBehaviour
+public class MouseClickController : MonoBehaviour, ISaveSystem
 {
     public AudioClip mouseClick;
     public AudioSource ads;
@@ -23,6 +23,16 @@ public class MouseClickController : MonoBehaviour
         // Listen for when the mouse is clicked to play
         // the mouse click sound.
         MouseClickCheck();
+    }
+
+    public void LoadSettings(GameSettings settings)
+    {
+        ads.volume = settings.clickVolume;
+    }
+
+    public void SaveSettings(ref GameSettings settings)
+    {
+        settings.clickVolume = ads.volume;
     }
 
     private void MouseClickCheck()

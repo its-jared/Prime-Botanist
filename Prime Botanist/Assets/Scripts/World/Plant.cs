@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Plant : MonoBehaviour
@@ -7,7 +8,7 @@ public class Plant : MonoBehaviour
     public GameObject plantPrefab;
     public Transform design;
     public Color meshColor = Color.green;
-    public GameObject healthBar;
+    // public GameObject healthBar;
 
     [Header("Plant Health")]
     public int plantHealth = 10; // 0 - 20; where 0 is dead and 20 is healthy
@@ -32,6 +33,11 @@ public class Plant : MonoBehaviour
     [Header("Growth")]
     public int numberOfGrowthStages;
     public float growthTime;
+
+    [Space]
+    public int happiness; // 0 - 20, 20 is super happy.
+    public float age;
+    public int water; // 0 - 20, 20 is fully hydrated.
 
     private float iteration;
     private float randomSpreadOffset;
@@ -73,6 +79,10 @@ public class Plant : MonoBehaviour
             return;
         }
 
+        // Update the plants happyness,
+        // this is based on their health and water. 
+        happiness = (plantHealth + water) / 2;
+
         // If the plant is unable to spread, or global spreading is stopped,
         // don't waste resources calculating the spread timer.
         if (!spread || !World.instance.plantSpreading) return;
@@ -87,7 +97,7 @@ public class Plant : MonoBehaviour
             allowedIterations--;
 
             // Spread.
-            if (allowedIterations >= 0)
+            if (allowedIterations >= 0 || happiness >= 10)
             {
                 Vector3 direction = Vector3.zero;
                 pos = transform.position;
@@ -120,13 +130,10 @@ public class Plant : MonoBehaviour
     {
         Debug.Log($"You clicked me ({plantName}).");
 
-        healthBar.SetActive(true);
-        healthBar.transform.position = transform.position;
-
         switch (World.instance.interactor.activeToolType)
         {
             case ToolType.WaterBucket:
-                Heal(1);
+                Water(2);
                 break;
             case ToolType.Dropper:
                 World.instance.interactor.ChangeSeed(gameObject);
@@ -145,10 +152,17 @@ public class Plant : MonoBehaviour
     public void Heal(int amount)
     {
         plantHealth += amount;
-        allowedIterations = allowedIterations + (plantHealth % 10);
 
         if (plantHealth >= 20)
             plantHealth = 20;
+    }
+
+    public void Water(int amount)
+    {
+        water += amount;
+
+        if (water >= 20)
+            water = 20;
     }
 
     private void die()

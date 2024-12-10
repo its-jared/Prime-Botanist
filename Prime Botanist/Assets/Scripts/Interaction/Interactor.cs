@@ -46,7 +46,7 @@ public class Interactor : MonoBehaviour
 
             // Check if the left mouse button was clicked.
             // If so, check if we're planting plants or watering them.
-            if (placeAction.WasCompletedThisFrame() && activeToolType == ToolType.Planter)
+            if (placeAction.WasCompletedThisFrame())
                 Place(highlight.position);
             // Check if the right mouse button was clicked.
             else if (breakAction.WasCompletedThisFrame())
