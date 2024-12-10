@@ -52,7 +52,7 @@ MonoBehaviour:
   design: {fileID: 9115673786339902148}
   meshColor: {r: 0.36329648, g: 0.735849, b: 0.36329648, a: 1}
   healthBar: {fileID: 0}
-  plantHealth: 20
+  plantHealth: 10
   canGoInWater: 0
   canGoOnLand: 1
   spread: 1
@@ -64,6 +64,8 @@ MonoBehaviour:
   randomYAxisRotation: 1
   randomHeightVariation: 0
   randomOffset: 1
+  numberOfGrowthStages: 0
+  growthTime: 0
 --- !u!1 &7934705263181950168
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Plant : MonoBehaviour
     public GameObject healthBar;
 
     [Header("Plant Health")]
-    public int plantHealth = 20; // 0 - 20; where 0 is dead and 20 is healthy
+    public int plantHealth = 10; // 0 - 20; where 0 is dead and 20 is healthy
 
     [Header("Plant Prefrences")]
     public bool canGoInWater;
@@ -29,14 +29,24 @@ public class Plant : MonoBehaviour
     public bool randomHeightVariation;
     public bool randomOffset;
 
+    [Header("Growth")]
+    public int numberOfGrowthStages;
+    public float growthTime;
+
     private float iteration;
     private float randomSpreadOffset;
     private Vector3 pos;
+    private bool isGrowing;
+    private int growthStage;
 
     void Awake()
     {
         // Set up the iterations.
         iteration = spreadTime;
+
+        // Make the plant grow.
+        // Growing is postponed. 
+        // isGrowing = true;
 
         // Variations
         if (randomYAxisRotation) transform.Rotate(new Vector3(0, Random.Range(0, 360), 0));
@@ -55,6 +65,14 @@ public class Plant : MonoBehaviour
 
     void FixedUpdate()
     {
+        // If the plant hasn't grown fully yet, 
+        // make the plant grow until its ready. 
+        if (isGrowing)
+        {
+            grow();
+            return;
+        }
+
         // If the plant is unable to spread, or global spreading is stopped,
         // don't waste resources calculating the spread timer.
         if (!spread || !World.instance.plantSpreading) return;
@@ -127,6 +145,7 @@ public class Plant : MonoBehaviour
     public void Heal(int amount)
     {
         plantHealth += amount;
+        allowedIterations = allowedIterations + (plantHealth % 10);
 
         if (plantHealth >= 20)
             plantHealth = 20;
@@ -135,5 +154,20 @@ public class Plant : MonoBehaviour
     private void die()
     {
         World.instance.plantsToKill.Enqueue(this.gameObject);
+    }
+
+    private void grow()
+    {
+        if (growthStage < numberOfGrowthStages)
+        {
+            growthStage++;
+
+            Vector3 localScale = design.transform.localScale;
+            design.transform.localScale = new Vector3((localScale.x + growthStage / 0.1f) * growthTime * Time.deltaTime,
+                                                      (localScale.y + growthStage / 0.1f) * growthTime * Time.deltaTime,
+                                                      (localScale.z + growthStage / 0.1f) * growthTime * Time.deltaTime);
+        }
+        else
+            isGrowing = false;
     }
 }
