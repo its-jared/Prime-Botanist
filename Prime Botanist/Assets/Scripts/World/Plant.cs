@@ -34,10 +34,14 @@ public class Plant : MonoBehaviour
     public int numberOfGrowthStages;
     public float growthTime;
 
+    [Header("Water")]
+    public int water; // 0 - 20, 20 is fully hydrated.
+    public float waterRegenSpeed;
+    public float waterRegenTime;
+
     [Space]
     public int happiness; // 0 - 20, 20 is super happy.
     public float age;
-    public int water; // 0 - 20, 20 is fully hydrated.
 
     private float iteration;
     private float randomSpreadOffset;
@@ -77,6 +81,15 @@ public class Plant : MonoBehaviour
         {
             grow();
             return;
+        }
+
+        // Water's relationship with the plants health. 
+        // More water gives the plant the ability to heal.
+        // Less water will cause the plant to take damage.
+        if (waterRegenTime >= (Time.deltaTime * waterRegenSpeed)) 
+        {
+            if (water >= 15) Heal(1);
+            if (water <= 5) TakeDamage(1);
         }
 
         // Update the plants happyness,

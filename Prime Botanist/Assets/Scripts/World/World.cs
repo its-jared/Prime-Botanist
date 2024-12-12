@@ -44,7 +44,12 @@ public class World : MonoBehaviour
             Destroy(t.gameObject);
             return;
         }
-
+        // Check if the plant is on a rock. 
+        if (meshCon.tiles[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y)] == (int)TileTypes.Rock)
+        {
+            Destroy(t.gameObject);
+            return;
+        }
         // Check if the plant is allowed to be in water.
         if (!t.gameObject.GetComponent<Plant>().canGoInWater)
         {
@@ -54,7 +59,6 @@ public class World : MonoBehaviour
                 return;
             }
         }
-
         // Check if the plant is allowed to be on land.
         if (!t.gameObject.GetComponent<Plant>().canGoOnLand)
         {

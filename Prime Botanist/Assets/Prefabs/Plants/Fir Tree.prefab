@@ -51,7 +51,7 @@ MonoBehaviour:
   plantPrefab: {fileID: 4590996368562713236}
   design: {fileID: 6197710401269677499}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
-  plantHealth: 20
+  plantHealth: 0
   canGoInWater: 0
   canGoOnLand: 1
   spread: 0
@@ -65,9 +65,11 @@ MonoBehaviour:
   randomOffset: 1
   numberOfGrowthStages: 0
   growthTime: 0
+  water: 20
+  waterRegenSpeed: 10
+  waterRegenTime: 1
   happiness: 0
   age: 0
-  water: 0
 --- !u!1001 &3891346119769069821
 PrefabInstance:
   m_ObjectHideFlags: 0

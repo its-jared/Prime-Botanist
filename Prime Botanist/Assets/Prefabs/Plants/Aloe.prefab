@@ -31,7 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5334300815541605788}
-  - {fileID: 7792541499907139233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2554432562977958150
@@ -51,7 +50,6 @@ MonoBehaviour:
   plantPrefab: {fileID: 7704456751072337085}
   design: {fileID: 5334300815541605788}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
-  healthBar: {fileID: 0}
   plantHealth: 20
   canGoInWater: 0
   canGoOnLand: 1
@@ -60,12 +58,9 @@ MonoBehaviour:
   spreadDistance: 2
   spreadSpeed: 0.1
   spreadTime: 5
-  randomTimeOffset: 0.02
   randomYAxisRotation: 1
   randomHeightVariation: 0
   randomOffset: 0
-  numberOfGrowthStages: 3
-  growthTime: 0.5
 --- !u!1001 &5588271323568829047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,10 +121,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7635826562936255635, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c3f94cec9d0e0cf49b74373fe441daf4, type: 2}
     - target: {fileID: 919132149155446097, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
       propertyPath: m_Name
       value: PUSHILIN_aloe_plant
@@ -143,66 +134,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
   m_PrefabInstance: {fileID: 5588271323568829047}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8165101105034487519
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6053786975641234844}
-    m_Modifications:
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998855161946675767, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-      propertyPath: m_Name
-      value: Plant Spawn Particle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
---- !u!4 &7792541499907139233 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2122584128477888638, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
-  m_PrefabInstance: {fileID: 8165101105034487519}
   m_PrefabAsset: {fileID: 0}

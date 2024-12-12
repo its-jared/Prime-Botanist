@@ -31,6 +31,7 @@ public class MeshController : MonoBehaviour
 
     private WorldType type;
 
+    private int rockCount;
 
     void Awake()
     {
@@ -70,7 +71,6 @@ public class MeshController : MonoBehaviour
         mesh.colors = colors;
     }
 
-    // TODO: Make nonstatic.
     public float GetNoise(Vector2 pos)
     {
         return noise[(int)pos.x, (int)pos.y];
@@ -91,8 +91,11 @@ public class MeshController : MonoBehaviour
                 float n = 0f;
                 if (!type.flat) n = Mathf.PerlinNoise((x + seed) * type.noiseZoom, (z + seed) * type.noiseZoom) * type.noiseScale;
 
-                if (n <= waterLevel) tiles[x, z] = 1;
-                else tiles[x, z] = 0;
+                if (n <= waterLevel) tiles[x, z] = (int)TileTypes.Water;
+                else if (type.generateRocks && type.rockThreshold >= Random.Range(0f, 1f)) placeRock(new Vector3(x, n, z));
+                else tiles[x, z] = (int)TileTypes.Land;
+
+                
 
                 noise[x, z] = n;
                 verts[i] = new Vector3(x, n, z);
@@ -146,5 +149,14 @@ public class MeshController : MonoBehaviour
 
         water.localScale = waterScale;
         water.position = waterPos;
+    }
+
+    private void placeRock(Vector3 pos)
+    {
+        rockCount++;
+        if (rockCount > type.allowedNumberOfRocks) return;
+
+        tiles[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)] = (int)TileTypes.Rock;
+        Instantiate(type.rockPrefab, pos, Quaternion.identity, transform);
     }
 }
