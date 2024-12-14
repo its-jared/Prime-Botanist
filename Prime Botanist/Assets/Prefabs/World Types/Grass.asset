@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Grass
   m_EditorClassIdentifier: 
   presetName: Grass
-  deepGroundColor: {r: 0, g: 0, b: 0, a: 1}
-  shallowGroundColor: {r: 0.53799975, g: 0.8207547, b: 0.4452207, a: 1}
+  deepGroundColor: {r: 0.5372549, g: 0.8196079, b: 0.44705886, a: 1}
+  shallowGroundColor: {r: 0.73041415, g: 0.9559748, b: 0.65835994, a: 1}
   flat: 0
   waterLevel: 0.5
   noiseZoom: 0.15
@@ -22,3 +22,6 @@ MonoBehaviour:
   generateRocks: 1
   rockPrefab: {fileID: 2077373976810319954, guid: 32d7c5b7d1f3b2945a811d1de293fa6d, type: 3}
   rockThreshold: 0.01
+  allowedNumberOfRocks: 3
+  spawnObelisk: 0
+  obeliskPrefab: {fileID: 0}

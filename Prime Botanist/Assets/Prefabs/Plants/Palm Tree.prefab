@@ -58,9 +58,17 @@ MonoBehaviour:
   spreadDistance: 0
   spreadSpeed: 0
   spreadTime: 0
+  randomTimeOffset: 0
   randomYAxisRotation: 1
   randomHeightVariation: 0
   randomOffset: 1
+  numberOfGrowthStages: 0
+  growthTime: 0
+  water: 20
+  waterRegenSpeed: 0.5
+  waterRegenTime: 0
+  happiness: 0
+  age: 0
 --- !u!1001 &688353682497723469
 PrefabInstance:
   m_ObjectHideFlags: 0

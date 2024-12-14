@@ -66,8 +66,8 @@ MonoBehaviour:
   numberOfGrowthStages: 0
   growthTime: 0
   water: 20
-  waterRegenSpeed: 10
-  waterRegenTime: 1
+  waterRegenSpeed: 0.5
+  waterRegenTime: 0
   happiness: 0
   age: 0
 --- !u!1 &7934705263181950168
@@ -227,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 4966409665695033816, guid: 08b3971f134eb79459fdc6ffe5681d26, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c3f94cec9d0e0cf49b74373fe441daf4, type: 2}
+      objectReference: {fileID: 2100000, guid: 9fe2719b3f9804b4fad530c99a253590, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

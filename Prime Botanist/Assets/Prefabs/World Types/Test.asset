@@ -22,3 +22,6 @@ MonoBehaviour:
   generateRocks: 1
   rockPrefab: {fileID: 2077373976810319954, guid: 32d7c5b7d1f3b2945a811d1de293fa6d, type: 3}
   rockThreshold: 0.01
+  allowedNumberOfRocks: 3
+  spawnObelisk: 1
+  obeliskPrefab: {fileID: 8003648943119423174, guid: 37e05c4a3c375104ab2fda5a57f78ff8, type: 3}

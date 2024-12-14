@@ -21,4 +21,8 @@ public class WorldType : ScriptableObject
     public GameObject rockPrefab;
     public float rockThreshold;
     public int allowedNumberOfRocks;
+
+    [Header("Obelisk")]
+    public bool spawnObelisk;
+    public GameObject obeliskPrefab;
 }

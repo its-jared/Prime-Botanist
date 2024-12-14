@@ -56,6 +56,8 @@ public class MeshController : MonoBehaviour
         generateTriangles();
         mesh.RecalculateNormals();
 
+        if (type.spawnObelisk) generateObelisk();
+
         // Add mesh & material to Unity mesh rendering components.
         meshFilter.mesh = mesh;
         meshCollider.sharedMesh = mesh;
@@ -88,7 +90,7 @@ public class MeshController : MonoBehaviour
         {
             for (int x = 0; x <= length; x++)
             {
-                float n = 0f;
+                float n = 1f;
                 if (!type.flat) n = Mathf.PerlinNoise((x + seed) * type.noiseZoom, (z + seed) * type.noiseZoom) * type.noiseScale;
 
                 if (n <= waterLevel) tiles[x, z] = (int)TileTypes.Water;
@@ -158,5 +160,13 @@ public class MeshController : MonoBehaviour
 
         tiles[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)] = (int)TileTypes.Rock;
         Instantiate(type.rockPrefab, pos, Quaternion.identity, transform);
+    }
+
+    private void generateObelisk()
+    {
+        float avgNoiseVal = noise[width / 2, height / 2];
+        Vector3 position = new Vector3(width / 2f, avgNoiseVal, length / 2f);
+
+        Instantiate(type.obeliskPrefab, position, Quaternion.identity, transform);
     }
 }

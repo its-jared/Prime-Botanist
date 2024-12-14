@@ -1130,29 +1130,21 @@ MonoBehaviour:
     m_Name: Zoom In
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: b0c6aff7-7239-4e34-84c0-ecf70f2bfd63
+    m_Id: dd7e2cf7-7dbb-47af-a1dd-143a3d078b94
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 55f3c4cc-7a80-4f4f-8f82-4c86ea892a14
-      m_Path: 
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Zoom In
-      m_Flags: 0
+    m_SingletonActionBindings: []
     m_Flags: 0
   zoomOut:
     m_Name: Zoom Out
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: a1b17710-aa7d-4faa-ba21-8c9fff88a016
+    m_Id: 76e1b1b3-7fb0-42c2-9940-3d882bb44018
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  zoomFactor: 0.5
+  zoomFactor: 1
 --- !u!1 &336502331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1497,7 @@ GameObject:
   - component: {fileID: 410087041}
   - component: {fileID: 410087040}
   - component: {fileID: 410087042}
+  - component: {fileID: 410087043}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1615,6 +1608,20 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!114 &410087043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a18c1fc945af446ba843d813e0e7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.01
+  factor: 0.1
 --- !u!1 &450425257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,15 +3392,15 @@ MonoBehaviour:
   meshMaterial: {fileID: 2100000, guid: 17fe1821f7039ed47895457f446d2549, type: 2}
   width: 15
   length: 15
-  height: 0
-  worldType: 1
+  height: 15
+  worldType: 2
   worldTypes:
   - {fileID: 11400000, guid: 0464c80f20ebde949a45401aadc40da0, type: 2}
   - {fileID: 11400000, guid: 157577eecefb53a4b87ab3cb40ef1b3f, type: 2}
   - {fileID: 11400000, guid: 4ebbd86dc1fac0b4e84f2948208b7298, type: 2}
   seed: 0
   water: {fileID: 630847731}
-  waterLevel: 0.6
+  waterLevel: 0
   cameraRotationTarget: {fileID: 1462413702}
   colors: []
 --- !u!64 &918809349
@@ -3483,7 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc026e993876f654c8f670d1a255e537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantSpreading: 1
+  plantSpreading: 0
   cameraBody: {fileID: 2113175527}
   cameraItself: {fileID: 330585545}
   interactor: {fileID: 2113175529}
@@ -5915,9 +5922,6 @@ MonoBehaviour:
   interactor: {fileID: 2113175529}
   activeToolLabel: {fileID: 518399284}
   activePlant: {fileID: 2119791284}
-  planterButton: {fileID: 540208668}
-  WaterBucketButton: {fileID: 1803471512}
-  DropperButton: {fileID: 1734629946}
 --- !u!1 &1593831155
 GameObject:
   m_ObjectHideFlags: 0
@@ -7240,7 +7244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1462413702}
   rotation: 90
-  rotationSpeed: 10
+  rotationSpeed: 0
   posAnim: {fileID: 0}
   negAnim: {fileID: 0}
 --- !u!114 &2113175529

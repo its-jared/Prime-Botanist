@@ -66,8 +66,8 @@ MonoBehaviour:
   numberOfGrowthStages: 0
   growthTime: 0
   water: 20
-  waterRegenSpeed: 10
-  waterRegenTime: 1
+  waterRegenSpeed: 0.5
+  waterRegenTime: 0
   happiness: 0
   age: 0
 --- !u!1001 &5579030702055172529
