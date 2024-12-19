@@ -16,9 +16,12 @@ MonoBehaviour:
   deepGroundColor: {r: 0.754717, g: 0.74342674, b: 0.6229975, a: 1}
   shallowGroundColor: {r: 1, g: 0.98823535, b: 0.86274517, a: 1}
   flat: 0
-  waterLevel: 0.6
+  waterLevel: 0.65
   noiseZoom: 0.15
   noiseScale: 2
+  defaultSoilHealth: 0.5
+  defaultSoilWater: 0.8
+  defaultSoilSunlight: 1
   generateRocks: 1
   rockPrefab: {fileID: 2077373976810319954, guid: 32d7c5b7d1f3b2945a811d1de293fa6d, type: 3}
   rockThreshold: 0.01

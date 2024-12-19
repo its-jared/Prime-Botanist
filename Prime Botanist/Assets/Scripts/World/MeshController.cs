@@ -30,6 +30,7 @@ public class MeshController : MonoBehaviour
     private byte[,,] voxels;
 
     private WorldType type;
+    private Soil soil;
 
     private int rockCount;
 
@@ -49,6 +50,10 @@ public class MeshController : MonoBehaviour
         meshFilter = GetComponent<MeshFilter>();
         meshCollider = GetComponent<MeshCollider>();
         meshRenderer = GetComponent<MeshRenderer>();
+
+        // Get the soil component.
+        soil = GetComponent<Soil>();
+        soil.Init();
 
         // Generate mesh geometry.
         mesh.Clear();
@@ -90,14 +95,17 @@ public class MeshController : MonoBehaviour
         {
             for (int x = 0; x <= length; x++)
             {
+                Vector2 pos = new Vector2(x, z);
+                soil.SetHealthAtPoint(pos, type.defaultSoilHealth);
+                soil.SetWaterAtPoint(pos, type.defaultSoilWater);
+                soil.SetSunlightAtPoint(pos, type.defaultSoilSunlight);
+
                 float n = 1f;
                 if (!type.flat) n = Mathf.PerlinNoise((x + seed) * type.noiseZoom, (z + seed) * type.noiseZoom) * type.noiseScale;
 
                 if (n <= waterLevel) tiles[x, z] = (int)TileTypes.Water;
                 else if (type.generateRocks && type.rockThreshold >= Random.Range(0f, 1f)) placeRock(new Vector3(x, n, z));
                 else tiles[x, z] = (int)TileTypes.Land;
-
-                
 
                 noise[x, z] = n;
                 verts[i] = new Vector3(x, n, z);
@@ -159,6 +167,7 @@ public class MeshController : MonoBehaviour
         if (rockCount > type.allowedNumberOfRocks) return;
 
         tiles[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z)] = (int)TileTypes.Rock;
+        Soil.instance.SetSunlightAtPoint(pos, 0f);
         Instantiate(type.rockPrefab, pos, Quaternion.identity, transform);
     }
 

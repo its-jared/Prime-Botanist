@@ -71,9 +71,8 @@ public class Interactor : MonoBehaviour
 
     private void Place(Vector3 pos)
     {
-        GameObject instance = Instantiate(seed, terrain.transform);
-        instance.transform.position = pos;
-        instance.name = "Plant";
+        GameObject instance = Instantiate(seed, pos, Quaternion.identity, meshCon.transform);
+        instance.name = instance.GetComponent<Plant>().plantName;
         World.instance.AddPlant(pos, instance.transform);
     }
 

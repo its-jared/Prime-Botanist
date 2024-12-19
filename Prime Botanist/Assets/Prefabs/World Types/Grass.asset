@@ -19,6 +19,9 @@ MonoBehaviour:
   waterLevel: 0.5
   noiseZoom: 0.15
   noiseScale: 2
+  defaultSoilHealth: 0.8
+  defaultSoilWater: 0.5
+  defaultSoilSunlight: 1
   generateRocks: 1
   rockPrefab: {fileID: 2077373976810319954, guid: 32d7c5b7d1f3b2945a811d1de293fa6d, type: 3}
   rockThreshold: 0.01

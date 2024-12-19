@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5dd80fa7a0064458625c98ded44c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantName: Palm Tree
+  plantName: PALM
   plantIcon: {fileID: 21300000, guid: c8df9f23b68b76f4b95270078726a1c4, type: 3}
   plantPrefab: {fileID: 4590996368562713236}
   design: {fileID: 688353682497766751}
@@ -67,6 +67,15 @@ MonoBehaviour:
   water: 20
   waterRegenSpeed: 0.5
   waterRegenTime: 0
+  minimumSoilHealth: 0
+  minimumSoilWater: 0
+  minimumSunlight: 0
+  soilHealth: 0
+  soilHealthRange: 0
+  soilWater: 0
+  soilWaterRange: 0
+  sunlight: 0
+  sunlightRange: 0
   happiness: 0
   age: 0
 --- !u!1001 &688353682497723469

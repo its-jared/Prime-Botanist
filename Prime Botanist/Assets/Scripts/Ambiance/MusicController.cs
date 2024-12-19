@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class MusicController : MonoBehaviour, ISaveSystem
+public class MusicController : MonoBehaviour
 {
     public AudioClip[] songs;
 
@@ -11,7 +11,7 @@ public class MusicController : MonoBehaviour, ISaveSystem
     {
         // Get and set the audio source. 
         ads = GetComponent<AudioSource>();
-       // ads.volume = gameSettings.gameSettings.musicVolume;
+        // ads.volume = gameSettings.gameSettings.musicVolume;
     }
 
     void Update()
@@ -20,15 +20,5 @@ public class MusicController : MonoBehaviour, ISaveSystem
         // If a song isn't currently playing we want to start another one. 
         if (!ads.isPlaying)
             ads.PlayOneShot(songs[Random.Range(0, songs.Length)]);
-    }
-
-    public void LoadSettings(GameSettings settings)
-    {
-        ads.volume = settings.musicVolume;
-    }
-
-    public void SaveSettings(ref GameSettings settings)
-    {
-        settings.musicVolume = ads.volume;
     }
 }

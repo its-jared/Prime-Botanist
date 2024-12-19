@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7704456751072337085
+--- !u!1 &4590996368562713236
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6053786975641234844}
-  - component: {fileID: 2554432562977958150}
+  - component: {fileID: 4511813504164942778}
+  - component: {fileID: 3765874546055351228}
   m_Layer: 0
-  m_Name: Aloe
+  m_Name: Cattail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6053786975641234844
+--- !u!4 &4511813504164942778
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7704456751072337085}
+  m_GameObject: {fileID: 4590996368562713236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5334300815541605788}
+  - {fileID: 4865377350859158189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2554432562977958150
+--- !u!114 &3765874546055351228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7704456751072337085}
+  m_GameObject: {fileID: 4590996368562713236}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e5dd80fa7a0064458625c98ded44c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantName: ALOE
-  plantIcon: {fileID: 21300000, guid: 658dc623ae6a1c04b8c4c9a6e9cef2b9, type: 3}
-  plantPrefab: {fileID: 7704456751072337085}
-  design: {fileID: 5334300815541605788}
+  plantName: CATTAIL
+  plantIcon: {fileID: 21300000, guid: c8df9f23b68b76f4b95270078726a1c4, type: 3}
+  plantPrefab: {fileID: 4590996368562713236}
+  design: {fileID: 4865377350859158189}
   meshColor: {r: 0, g: 1, b: 0, a: 1}
   plantHealth: 20
-  canGoInWater: 0
+  canGoInWater: 1
   canGoOnLand: 1
-  spread: 1
-  allowedIterations: 1
-  spreadDistance: 2
-  spreadSpeed: 0.1
-  spreadTime: 5
+  spread: 0
+  allowedIterations: 0
+  spreadDistance: 0
+  spreadSpeed: 0
+  spreadTime: 0
   randomTimeOffset: 0
   randomYAxisRotation: 1
   randomHeightVariation: 0
-  randomOffset: 0
+  randomOffset: 1
   numberOfGrowthStages: 0
   growthTime: 0
   water: 20
@@ -70,85 +70,85 @@ MonoBehaviour:
   minimumSoilHealth: 0
   minimumSoilWater: 0
   minimumSunlight: 0
-  soilHealth: 1
-  soilHealthRange: 2
-  soilWater: 0
+  soilHealth: 0
+  soilHealthRange: 0
+  soilWater: 1
   soilWaterRange: 0
-  sunlight: 0
+  sunlight: -0.5
   sunlightRange: 0
   happiness: 0
   age: 0
---- !u!1001 &5588271323568829047
+--- !u!1001 &4904406324509250886
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6053786975641234844}
+    m_TransformParent: {fileID: 4511813504164942778}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
+    - target: {fileID: 919132149155446097, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
       propertyPath: m_Name
-      value: PUSHILIN_aloe_plant
+      value: cattail
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
---- !u!4 &5334300815541605788 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
+--- !u!4 &4865377350859158189 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ecc9f5ba5f9ab14e877514cda8f3a60, type: 3}
-  m_PrefabInstance: {fileID: 5588271323568829047}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8205b8fd0f10bcf41a602b48359d53e9, type: 3}
+  m_PrefabInstance: {fileID: 4904406324509250886}
   m_PrefabAsset: {fileID: 0}

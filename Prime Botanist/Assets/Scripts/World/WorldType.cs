@@ -16,6 +16,11 @@ public class WorldType : ScriptableObject
     public float noiseZoom;
     public float noiseScale;
 
+    [Header("Soil")]
+    public float defaultSoilHealth;
+    public float defaultSoilWater;
+    public float defaultSoilSunlight;
+
     [Header("Rock Generation")]
     public bool generateRocks;
     public GameObject rockPrefab;

@@ -10,9 +10,9 @@ public class StatsMenu : MonoBehaviour
 
     public void Active()
     {
-        averagePlantHealthText.text = $"{WorldStats.averagePlantHealth} hp";
+        averagePlantHealthText.text = $"{WorldStats.averagePlantHealth}";
         averagePlantHappynessText.text = $"{WorldStats.averagePlantHappiness}";
         averagePlantWaterText.text = $"{WorldStats.averagePlantWater}";
-        worldAge.text = $"{Mathf.Floor(WorldStats.worldAge)} yr(s)";
+        worldAge.text = $"{WorldStats.worldAge}";
     }
 }
