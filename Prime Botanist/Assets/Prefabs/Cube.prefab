@@ -134,6 +134,23 @@ MonoBehaviour:
   spreadDistance: 1
   spreadSpeed: 2.5
   spreadTime: 5
+  randomTimeOffset: 0
   randomYAxisRotation: 0
   randomHeightVariation: 0
   randomOffset: 0
+  numberOfGrowthStages: 0
+  growthTime: 0
+  water: 20
+  waterRegenSpeed: 0
+  waterRegenTime: 0
+  minimumSoilHealth: 0
+  minimumSoilWater: 0
+  minimumSunlight: 0
+  soilHealth: 0
+  soilHealthRange: 0
+  soilWater: 0
+  soilWaterRange: 0
+  sunlight: 0
+  sunlightRange: 0
+  happiness: 0
+  age: 0

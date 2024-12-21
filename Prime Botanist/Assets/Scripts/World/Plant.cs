@@ -40,6 +40,7 @@ public class Plant : MonoBehaviour
     public float waterRegenTime;
 
     [Header("Environmental Requirements")]
+    public bool picky;
     public float minimumSoilHealth;
     public float minimumSoilWater;
     public float minimumSunlight;
@@ -79,15 +80,28 @@ public class Plant : MonoBehaviour
         // Fixes odd bug where plants' design mesh sticks around the orgin when spawned through spreading.
         // This bug doesn't occur when placing the plants down regularly though. 
         // TODO: Implement a better solution.
-        /*design.position = new Vector3(transform.position.x - design.position.x,
-                                      design.position.y,
-                                      transform.position.z - design.position.z);*/
+        if (randomOffset)
+            design.position = new Vector3(transform.position.x - design.position.x,
+                                          design.position.y,
+                                          transform.position.z - design.position.z);
 
         randomSpreadOffset = Random.Range(-randomTimeOffset, randomTimeOffset);
 
-        if (soilHealth != 0f) effectSoilHealth();
-        if (soilWater != 0f) effectSoilWater();
-        if (sunlight != 0f) effectSunlight();
+        if (soilHealth != 0f)
+        {
+            if (soilHealthRange == 0) Soil.instance.SetHealthAtPoint(transform.position, soilHealth);
+            else Soil.instance.SetHealthAtRange(transform.position, soilHealth, soilHealthRange);
+        }
+        if (soilWater != 0f)
+        {
+            if (soilWaterRange == 0) Soil.instance.SetHealthAtPoint(transform.position, soilWater);
+            else Soil.instance.SetHealthAtRange(transform.position, soilWater, soilWaterRange);
+        }
+        if (sunlight != 0f)
+        {
+            if (sunlightRange == 0) Soil.instance.SetHealthAtPoint(transform.position, sunlight);
+            else Soil.instance.SetHealthAtRange(transform.position, sunlight, sunlightRange);
+        }
     }
 
     void FixedUpdate()
@@ -213,26 +227,6 @@ public class Plant : MonoBehaviour
         }
         else
             isGrowing = false;
-    }
-
-    private void effectSoilHealth()
-    {
-        Debug.Log(transform.position);
-
-        if (soilHealthRange == 0f) Soil.instance.SetHealthAtPoint(transform.position, soilHealth);
-        else
-        {
-            for (int x = Mathf.FloorToInt(transform.position.x), i = 0; x < Mathf.FloorToInt(transform.position.x) + soilHealthRange; x++)
-            {
-                for (int y = Mathf.FloorToInt(transform.position.y); y < Mathf.FloorToInt(transform.position.y) + soilHealthRange; y++)
-                {
-                    float originalValue = Soil.instance.GetHealthAtPoint(new Vector2(x, y));
-
-                    Soil.instance.SetHealthAtPoint(new Vector2(x, y), soilHealth);
-                    i++;
-                }
-            }
-        }
     }
 
     private void effectSoilWater()

@@ -37,6 +37,9 @@ public class World : MonoBehaviour
 
     public void AddPlant(Vector2 pos, Transform t, bool click = true)
     {
+        Vector2Int intpos = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
+        Plant plant = t.gameObject.GetComponent<Plant>();
+
         // Attempting to spawn plant outside of the world.
         if (pos.x <= 0 || pos.y <= 0 ||
             pos.x >= meshCon.width || pos.y >= meshCon.length)
@@ -45,28 +48,20 @@ public class World : MonoBehaviour
             return;
         }
         // Check if the plant is on a rock. 
-        if (meshCon.tiles[Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y)] == (int)TileTypes.Rock)
+        if (meshCon.tiles[intpos.x, intpos.y] == (int)TileTypes.Rock)
         {
             Destroy(t.gameObject);
             return;
         }
-        // Check if the plant is allowed to be in water.
-        if (!t.gameObject.GetComponent<Plant>().canGoInWater)
+        // Check to see if plants soil requirements are met. 
+        if (plant.picky)
         {
-            if (meshCon.tiles[(int)pos.x, (int)pos.y] == 1)
-            {
-                Destroy(t.gameObject);
-                return;
-            }
-        }
-        // Check if the plant is allowed to be on land.
-        if (!t.gameObject.GetComponent<Plant>().canGoOnLand)
-        {
-            if (meshCon.tiles[(int)pos.x, (int)pos.y] == 0)
-            {
-                Destroy(t.gameObject);
-                return;
-            }
+            // Soil Health
+            if (Soil.instance.GetHealthAtPoint(intpos) >= plant.minimumSoilHealth) return;
+            // Soil Water
+            if (Soil.instance.GetWaterAtPoint(intpos) >= plant.minimumSoilWater) return;
+            // Soil Sunlight
+            if (Soil.instance.GetSunlightAtPoint(intpos) >= plant.minimumSunlight) return;
         }
 
         if (plants.TryAdd(pos, t))
@@ -78,8 +73,8 @@ public class World : MonoBehaviour
         Destroy(t.gameObject);
 
         // "Click" the plant.
-        Transform plant;
-        if (click && plants.TryGetValue(pos, out plant)) {
+        Transform plantTransform;
+        if (click && plants.TryGetValue(pos, out plantTransform)) {
             plant.gameObject.GetComponent<Plant>().Clicked();
         }
     }

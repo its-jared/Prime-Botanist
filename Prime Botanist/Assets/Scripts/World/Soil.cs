@@ -123,6 +123,61 @@ public class Soil : MonoBehaviour
         SetSunlightAtPoint(new Vector2(pos.x, pos.z), v);
     }
 
+    // Set Range //
+    public void SetHealthAtRange(Vector2 pos, float value, int distanceFromPos)
+    {
+        Vector2Int vPos = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
+
+        for (int x = vPos.x - distanceFromPos, i = 0; x < vPos.x + distanceFromPos; x++)
+        {
+            for (int y = vPos.y - distanceFromPos; y < vPos.y + distanceFromPos; y++)
+            {
+                SetHealthAtPoint(new Vector2(x, y), value);
+                i++;
+            }
+        }
+    }
+    public void SetHealthAtRange(Vector3 pos, float value, int distanceFromPos)
+    {
+        SetHealthAtRange(new Vector2(pos.x, pos.z), value, distanceFromPos);
+    }
+
+    public void SetWaterAtRange(Vector2 pos, float value, int distanceFromPos)
+    {
+        Vector2Int vPos = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
+
+        for (int x = vPos.x - distanceFromPos, i = 0; x < vPos.x + distanceFromPos; x++)
+        {
+            for (int y = vPos.y - distanceFromPos; y < vPos.y + distanceFromPos; y++)
+            {
+                SetWaterAtPoint(new Vector2(x, y), value);
+                i++;
+            }
+        }
+    }
+    public void SetWaterAtRange(Vector3 pos, float value, int distanceFromPos)
+    {
+        SetWaterAtRange(new Vector2(pos.x, pos.z), value, distanceFromPos);
+    }
+
+    public void SetSunlightAtRange(Vector2 pos, float value, int distanceFromPos)
+    {
+        Vector2Int vPos = new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
+
+        for (int x = vPos.x - distanceFromPos, i = 0; x < vPos.x + distanceFromPos; x++)
+        {
+            for (int y = vPos.y - distanceFromPos; y < vPos.y + distanceFromPos; y++)
+            {
+                SetSunlightAtPoint(new Vector2(x, y), value);
+                i++;
+            }
+        }
+    }
+    public void SetSunlightAtRange(Vector3 pos, float value, int distanceFromPos)
+    {
+        SetSunlightAtRange(new Vector2(pos.x, pos.z), value, distanceFromPos);
+    }
+
     private void setDebugMeshColor()
     {
         for (int i = 0, z = 0; z <= meshCon.width; z++)

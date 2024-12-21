@@ -51,7 +51,7 @@ MonoBehaviour:
   plantPrefab: {fileID: 1800024602312658452}
   design: {fileID: 9115673786339902148}
   meshColor: {r: 0.36329648, g: 0.735849, b: 0.36329648, a: 1}
-  plantHealth: 0
+  plantHealth: 20
   canGoInWater: 0
   canGoOnLand: 1
   spread: 1
@@ -68,12 +68,13 @@ MonoBehaviour:
   water: 20
   waterRegenSpeed: 0.5
   waterRegenTime: 0
-  minimumSoilHealth: 0
-  minimumSoilWater: 0
-  minimumSunlight: 0
-  soilHealth: 0
+  picky: 1
+  minimumSoilHealth: 0.5
+  minimumSoilWater: 0.5
+  minimumSunlight: 0.5
+  soilHealth: 0.5
   soilHealthRange: 0
-  soilWater: 0
+  soilWater: 0.1
   soilWaterRange: 0
   sunlight: 0
   sunlightRange: 0
@@ -159,6 +160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4407716777469244157, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 4998855161946675767, guid: e3bd4dde004988042b32175ad5d2751a, type: 3}
       propertyPath: m_Name
       value: Plant Spawn Particle
@@ -236,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 4966409665695033816, guid: 08b3971f134eb79459fdc6ffe5681d26, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9fe2719b3f9804b4fad530c99a253590, type: 2}
+      objectReference: {fileID: 2100000, guid: c3f94cec9d0e0cf49b74373fe441daf4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

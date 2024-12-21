@@ -6,9 +6,7 @@ public class WorldType : ScriptableObject
 {
     public string presetName;
 
-    [Header("Colors")]
-    public Color deepGroundColor;
-    public Color shallowGroundColor;
+    public Gradient groundGradient;
 
     [Header("Generation")]
     public bool flat;

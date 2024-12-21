@@ -103,16 +103,18 @@ public class MeshController : MonoBehaviour
                 float n = 1f;
                 if (!type.flat) n = Mathf.PerlinNoise((x + seed) * type.noiseZoom, (z + seed) * type.noiseZoom) * type.noiseScale;
 
-                if (n <= waterLevel) tiles[x, z] = (int)TileTypes.Water;
+                if (n <= waterLevel)
+                {
+                    tiles[x, z] = (int)TileTypes.Water;
+                    Soil.instance.SetWaterAtPoint(new Vector2(x, z), 1f);
+                }
                 else if (type.generateRocks && type.rockThreshold >= Random.Range(0f, 1f)) placeRock(new Vector3(x, n, z));
                 else tiles[x, z] = (int)TileTypes.Land;
 
                 noise[x, z] = n;
                 verts[i] = new Vector3(x, n, z);
                 uvs[i] = new Vector3(x, z);
-                colors[i] = new Color(Mathf.Lerp(type.deepGroundColor.r, type.shallowGroundColor.r, n),
-                                      Mathf.Lerp(type.deepGroundColor.g, type.shallowGroundColor.g, n),
-                                      Mathf.Lerp(type.deepGroundColor.b, type.shallowGroundColor.b, n));
+                colors[i] = type.groundGradient.Evaluate(n);
                 i++;
             }
         }
@@ -155,7 +157,7 @@ public class MeshController : MonoBehaviour
 
         float x = width / 2;
         float z = width / 2;
-        Vector3 waterPos = new Vector3(x + 0.5f, 0f, z + 0.5f);
+        Vector3 waterPos = new Vector3(x, 0f, z);
 
         water.localScale = waterScale;
         water.position = waterPos;
@@ -176,6 +178,9 @@ public class MeshController : MonoBehaviour
         float avgNoiseVal = noise[width / 2, height / 2];
         Vector3 position = new Vector3(width / 2f, avgNoiseVal, length / 2f);
 
+        tiles[Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.y)] = (int)TileTypes.Rock;
+        Soil.instance.SetHealthAtRange(position, 1, 1);
+        Soil.instance.SetSunlightAtRange(position, 1, 2);
         Instantiate(type.obeliskPrefab, position, Quaternion.identity, transform);
     }
 }
