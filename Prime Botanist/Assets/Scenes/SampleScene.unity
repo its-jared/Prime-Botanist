@@ -3243,7 +3243,7 @@ MonoBehaviour:
   width: 16
   length: 16
   height: 15
-  worldType: 0
+  worldType: 2
   worldTypes:
   - {fileID: 11400000, guid: 4ebbd86dc1fac0b4e84f2948208b7298, type: 2}
   - {fileID: 11400000, guid: dc073c74a5b3fc04d8a75ecd78ffe4f3, type: 2}
@@ -3639,10 +3639,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Welcome Panel
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 3886724362314901045, guid: 11b6283741447854d995a264d3edf58a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 5428491080992648433, guid: 11b6283741447854d995a264d3edf58a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -3992,7 +3995,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 486612947}
+<<<<<<< Updated upstream
   - {fileID: 407873886}
+=======
+>>>>>>> Stashed changes
   m_Father: {fileID: 1770153220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
